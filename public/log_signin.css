@@ -1,0 +1,141 @@
+/* Auth pages general styling */
+body {
+    background-color: #1a1a1a;
+    font-family: "Grenze Gotisch", serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 3vw;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(232, 13, 70, 0.2);
+}
+
+/* Heading styles */
+.form-container h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    font-family: "Racing Sans One", serif;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+/* Input field styling */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #e80d46;
+    box-shadow: 0 0 10px rgba(232, 13, 70, 0.3);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e80d46;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Grenze Gotisch", serif;
+}
+
+button:hover {
+    background-color: #ff2d64;
+    transform: translateY(-2px);
+}
+
+/* Animated shapes */
+.form-container::before,
+.form-container::after {
+    content: '';
+    position: fixed;
+    width: 26vw;
+    height: 26vw;
+    border-radius: 50%;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.form-container::before {
+    background: linear-gradient(45deg, #ff2d64, #e80d46);
+    top: 10%;
+    right: 20%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.form-container::after {
+    background: linear-gradient(45deg, #e80d46, #1a1a1a);
+    bottom: 10%;
+    left: 20%;
+    animation: float-reverse 6s ease-in-out infinite;
+}
+
+/* Shape animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+@keyframes float-reverse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(20px) scale(1.05);
+    }
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-container {
+        width: 85%;
+        padding: 2rem;
+    }
+    
+    .form-container::before,
+    .form-container::after {
+        width: 40vw;
+        height: 40vw;
+    }
+}

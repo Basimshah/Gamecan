@@ -1,0 +1,762 @@
+/* General styling */
+body {
+  background-color: #1a1a1a;
+  font-family: "Grenze Gotisch", serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-family: "Racing Sans One", serif;
+}
+
+/* Fix the header at the top of the page */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  z-index: 1000; /* Ensure the header is always above other content */
+}
+
+/* Adjust the body content to not be hidden behind the fixed header */
+body {
+  margin-top: 6vw; /* Add margin to prevent content from being hidden under the fixed header */
+}
+
+
+.logo {
+  width: 70%;
+  border-right: 1px solid white;
+}
+
+.logo img {
+  padding: 2vw 3vw;
+  width: 10vw;
+}
+
+.login_logo {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__buttons {
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2vw;
+  width: 30%;  /* Increased from 15% to 30% */
+}
+
+.login_logo {
+  text-decoration: none;
+  color: white;
+  font-family: "Grenze Gotisch", serif;
+  font-size: 1.5vw;
+  padding: 0.8vw 1.5vw;
+  border: 1px solid #e80d46;
+  border-radius: 2vw;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, transparent 50%, #e80d46 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 5vw;  /* Added to maintain button width consistency */
+}
+
+.login_logo:hover {
+  background-position: right bottom;
+  color: white;
+  box-shadow: 0 0 15px rgba(232, 13, 70, 0.5);
+}
+
+#logout-button {
+  font-family: "Grenze Gotisch", serif;
+  font-size: 1.5vw;
+  padding: 0.8vw 1.5vw;
+  border: 1px solid #e80d46;
+  border-radius: 2vw;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, transparent 50%, #e80d46 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  min-width: 5vw;  /* Added to maintain button width consistency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logout-button:hover {
+  background-position: right bottom;
+  color: white;
+  box-shadow: 0 0 15px rgba(232, 13, 70, 0.5);
+}
+
+/* Tablet version */
+@media (max-width: 1023px) and (min-width: 720px) {
+  .login_logo, #logout-button {
+      font-size: 2vw;
+      padding: 1vw 2vw;
+  }
+}
+
+/* Mobile version */
+@media (max-width: 729px) and (min-width: 360px) {
+  .login_logo, #logout-button {
+      font-size: 2.5vw;
+      padding: 1.2vw 2.5vw;
+  }
+  
+  .nav__buttons {
+      gap: 3vw;  /* Increased gap for better spacing on mobile */
+  }
+}
+
+/* First section */
+.first_section {
+  display: flex;
+  flex-direction: row;
+  margin: 3vw 3vw 5vw 3vw;
+}
+
+.left_div {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding-top: 2vw;
+}
+
+.left_div img {
+  height: 6vw;
+}
+
+.left_div p {
+  font-size: 2vw;
+  color: white;
+  margin: 8vw 13vw 0 0;
+}
+
+.right_div {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.right_div h1 {
+  margin: 0;
+  margin-bottom: 0%;
+}
+
+.right_div h1:last-child {
+  margin-bottom: 0; /* Remove margin for the last heading */
+}
+
+.heading_1 {
+  color: white;
+  display: flex;
+  justify-content: right;
+}
+
+.heading_1 h1 {
+  font-size: 8vw;
+  padding: 0%;
+}
+
+.heading_2 {
+  margin-right: 5vw;
+  color: white;
+  display: flex;
+  justify-content: right;
+}
+
+.heading_2 h1 {
+  font-size: 8vw;
+  padding: 0%;
+  color: transparent; /* Make the text itself transparent */
+  background-clip: text;
+  -webkit-text-stroke: 1px #fff;
+}
+
+
+.heading_3 {
+  color: white;
+  display: flex;
+  justify-content: right;
+}
+
+.heading_3 h1 {
+  font-size: 8vw;
+  padding: 0%;
+  z-index: 0;
+}
+
+/* Shapes styling */
+.shapes {
+  position: relative;
+  z-index: -1;
+}
+
+.shape-1, .shape-2 {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.shape-1 {
+  width: 26vw;
+  height: 26vw;
+  background: linear-gradient(45deg, #ff2d64, #e80d46);
+  top: -100px;
+  right: 0%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 26vw;
+  height: 26vw;
+  background: linear-gradient(45deg, #e80d46, #1a1a1a);
+  top: -80px;
+  right: 17%;
+  animation: float-reverse 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(20px);
+  }
+}
+
+/* Video section */
+.video_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3vw;
+  background-color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+.video_section video {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  outline: none;
+}
+
+
+.v_r_gamecan h1 {
+  font-size: 8vw;
+  color: white;
+  margin-left: 3vw;
+}
+
+.aboutus li {
+  font-size: 1.5vw;
+  color: white;
+}
+
+.aboutus li::marker {
+  color: #e80d46;
+  font-size: 2.5vw;
+}
+
+.section_2 {
+  margin: 3vw;
+}
+
+.section_2 p {
+  font-size: 2.5vw;
+  margin-right: 33vw;
+  padding: 2vw 0;
+  color: white;
+}
+
+.section_2 img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  font-size: 7vw;
+  color: white;
+  overflow: hidden; /* Ensures the text doesn't overflow the container */
+  white-space: nowrap; /* Prevent text wrapping */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.marquee ul {
+  display: flex;
+  animation: scroll 10s linear infinite;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marquee li {
+  flex-shrink: 0;
+  margin-right: 0.5vw; /* Adjust spacing between items */
+}
+
+.marquee ul::after {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 100%; /* Ensures no gap between iterations */
+}
+
+
+
+.section_3 {
+  background-color: #dadbdd;
+}
+
+.our_values li {
+  font-size: 1.3vw;
+  padding: 8vw 0 1vw 3vw;
+}
+
+.our_values li::marker {
+  color: #e80d46;
+  font-size: 2vw;
+}
+
+.section_3_2 {
+  height: 60vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.single_div {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 33%;
+  height: 100%;
+}
+
+.main_text {
+  padding: 10vw 4vw 0 3vw;
+  font-size: 2.5vw;
+}
+
+.secondary_text {
+  padding: 0 19vw 3vw 3vw;
+}
+
+.single_div button {
+  width: 11.5vw;
+  height: 3vw;
+  margin-left: 3vw;
+  border-radius: 5vw;
+  font-size: 1.2vw;
+  background-color: #dadbdd;
+  transition: background-color 0.5s ease; /* Smooth transition for hover effect */
+}
+
+.single_div button:hover {
+  background-color: #e80d46; /* Change color on hover */
+  color: #ffffff; /* Optional: change text color for better visibility */
+}
+
+.multiple_div {
+  width: 67%;
+}
+
+.multiple_box {
+  border: 1px solid black;
+  width: 100%;
+  height: 24.85%;
+}
+
+.multiple_box h3 {
+  font-size: 1.8vw;
+  padding-left: 3vw;
+}
+
+.multiple_box p {
+  font-size: 1.5vw;
+  padding-left: 3vw;
+  padding-right: 19vw;
+}
+
+/* Multiple Box Styling */
+.multiple_box {
+  position: relative; /* Necessary for the shapes to position absolutely within */
+  overflow: hidden;   /* Prevent shapes from exceeding boundaries */
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #dadbdd; /* Default background */
+}
+
+/* Text Styling */
+.multiple_box h3, .multiple_box p {
+  position: relative; /* Keep text above shapes */
+  z-index: 1; /* Ensure text is above shapes */
+  transition: color 0.3s;
+}
+
+/* Change Background and Text Colors on Hover */
+.multiple_box:hover {
+  background-color: #1a1a1a; /* Change background on hover */
+}
+
+.multiple_box:hover h3, .multiple_box:hover p {
+  color: white; /* Change text color on hover */
+}
+
+/* Shape Styling */
+.multiple_box .shape-1, .multiple_box .shape-2 {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0; /* Ensure shapes are behind the text */
+  filter: blur(20px);
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Shape 1 Position and Color */
+.multiple_box .shape-1 {
+  width: 20vw;
+  height: 20vw;
+  background: linear-gradient(45deg, #ff2d64, #e80d46);
+  top: 10%;
+  left: 15%;
+}
+
+/* Shape 2 Position and Color */
+.multiple_box .shape-2 {
+  width: 20vw;
+  height: 20vw;
+  background: linear-gradient(45deg, #e80d46, #1a1a1a);
+  bottom: 15%;
+  right: 10%;
+}
+
+/* Show Shapes on Hover */
+.multiple_box:hover .shape-1, .multiple_box:hover .shape-2 {
+  opacity: 1; /* Make shapes visible */
+  transform: scale(1.1); /* Slightly enlarge shapes for effect */
+}
+
+
+.section_4 h1 {
+  font-size: 8vw;
+  color: white;
+  margin-left: 3vw;
+}
+
+.selected li {
+  font-size: 1.3vw;
+  padding: 0 0 1vw 3vw;
+  color: white;
+}
+
+.selected li::marker {
+  color: #e80d46;
+  font-size: 2vw;
+}
+
+.section_4_text{
+  display: flex;
+  flex-direction: row;
+  gap: 15vw;
+  margin: 0 3vw 10vw 3vw;
+}
+
+.section_4_text h3{
+  color: white;
+  font-size: 2.5vw;
+}
+
+.section_4_text p{
+  color: white;
+  font-size: 2vw;
+  padding-right: 9vw;
+}
+
+.section_5{
+  background-color: #dadbdd;
+}
+
+.section_5 h1 {
+  font-size: 8vw;
+  color: black;
+  margin-left: 3vw;
+  padding-top: 7vw;
+}
+
+.they_said li {
+  font-size: 1.3vw;
+  padding: 0 0 1vw 3vw;
+  color: black;
+}
+
+.they_said li::marker {
+  color: #e80d46;
+  font-size: 2vw;
+}
+
+.they_said_hr{
+  margin-bottom: 10vw;
+}
+
+.review_sec{
+  display: flex;
+  flex-direction: column;
+  margin-left: 3vw;
+}
+
+.identity_sec{
+  display: flex;
+  flex-direction: row;
+}
+
+.identity_sec img{
+  border-radius: 50%;
+  max-width: 76px;
+  overflow: hidden;
+  margin-right: 1.5vw;
+}
+
+.name{
+  font-size: 1.2vw;
+  color: #e80d46;
+}
+
+.role{
+  font-size: 1.2vw;
+  color: black;
+}
+
+.identity_sec_text {
+  display: flex;
+  flex-direction: column;
+  padding: 1vw 0 0 0; /* Ensure no extra padding */
+}
+
+.identity_sec_text p {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove any padding */
+}
+
+.text_sec{
+  margin-top: 3vw;
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+}
+
+.text_sec p{
+  font-size: 2.5vw;
+  padding-right: 28vw;
+}
+
+.hr_padding{
+  margin: 7vw 3vw;
+}
+
+.section_6{
+  display: flex;
+  flex-direction: column;
+}
+
+.section_6_1{
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  font-size: 1vw;
+}
+
+.gamecan{
+  width: 33.33%;
+  border-right: 1px solid white;
+}
+
+.gamecan_logo img{
+  width: 10vw;
+  padding-left: 2.3vw;
+  padding-top: 1.5vw;
+}
+
+.thankyou p{
+  color: white;
+  padding: 1.5vw 0 3vw 3vw;
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+  border-right: 1px solid white;
+}
+
+.contact img{
+  width: 2.5vw;
+}
+
+.upper_div{
+  height: 50%;
+  border-bottom: 1px solid white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upper_div p{
+  color: white;
+}
+
+.upper_div_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.upper_div_content img{
+  justify-content: center;
+  align-items: center;
+}
+
+.lower_div{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lower_div p{
+  color: white;
+}
+
+.lower_div_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.lower_div_content img{
+  justify-content: center;
+  align-items: center;
+}
+
+.social_media{
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_media_content{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+
+.social_media_content img{
+  width: 2.7vw;
+  height: 2.7vw;
+}
+
+.section_6_2{
+  display: flex;
+  flex-direction: row;
+  padding: 1vw 3vw;
+  justify-content: space-evenly;
+  color: grey;
+}
+
+/*Tablet version*/
+@media (max-width: 1023px) and (min-width: 720px) {
+  .section_6_1{
+      font-size: 2vw;
+  }
+  .aboutus li{
+      font-size: 2vw;
+  }
+  .our_values li {
+      font-size: 2vw;
+  }
+  .selected li {
+      font-size: 2vw;
+  }
+  .they_said li {
+      font-size: 2vw;
+  }
+  .name{
+      font-size: 2vw;
+  }
+  .role{
+      font-size: 2vw;
+  }
+  .left_div p {
+      display: none;
+  }
+}
+
+/*Mobile version*/
+@media (max-width: 729px) and (min-width: 360px) {
+  .section_6_1{
+      font-size: 2.5vw;
+  }
+  .aboutus li{
+      font-size: 2.5vw;
+  }
+  .our_values li {
+      font-size: 2.5vw;
+  }
+  .selected li {
+      font-size: 2.5vw;
+  }
+  .they_said li {
+      font-size: 2.5vw;
+  }
+  .name{
+      font-size: 2.5vw;
+  }
+  .role{
+      font-size: 2.5vw;
+  }
+  .left_div p {
+      display: none;
+  }
+}
